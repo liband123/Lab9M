@@ -12,17 +12,43 @@ public class MaxHeap {
     }
     
     /**
+     * Author: Ashley Pike
      * Remove the max value from the root of the tree while 
      * keeping the remaining the items as a max-heap
      * @return max value
      */
     public int delete()
     {
-        // Your codes goes here
+        if (this.equals(null))
+            return -1;
         
+        int result = this.data[0];
+        if (this.data.length == 0) {
+            this.data[0] = null;
+            return temp;
+        }
         
-        // You should change this line and return the max value
-        return 0;
+        this.data[0] = this.data[this.data.length-1];
+        this.data[this.data.length-1] = 0;
+        
+        int parent = 0;
+        while (true) {
+            int leftChild = 2 * parent + 1;
+            if (leftChild >= this.data.length)
+                break;
+            int rightChild = leftChild + 1;
+            int maxChild = leftChild;
+            if (rightChild < this.data.length)
+                maxChild = Math.max(leftChild, rightChild);
+            if (maxChild > parent) {
+                int temp = parent;
+                maxChild = temp;
+                parent = maxChild;
+            } else {
+                break
+            }   
+        }
+        return result;
     }
     
     /**
