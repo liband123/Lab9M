@@ -12,8 +12,19 @@ public class HeapSort {
         MaxHeap maxHeap = new MaxHeap(input);
         // Your code goes here
         
-        
+        for (int i = input.length - 1; i >= 0; i--) {
+            int maxValue = maxHeap.delete();
+            input[i] = maxValue;
+            
+            
+            
+            
+        }
+ 
         // You might change this line and return the sorted array
         return input;
     }
 }
+
+
+
