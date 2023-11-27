@@ -1,0 +1,10 @@
+public class RunningExample {
+    public static void main(String[] args) {
+        int[] input = {5, 2, 9, 1, 3};
+        int[] sortedArray = HeapSort.sort(input);
+        for (int num : sortedArray) {
+            System.out.print(num + " ");
+        }
+    }
+}
+}
